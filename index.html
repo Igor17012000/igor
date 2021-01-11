@@ -1,0 +1,28 @@
+<!--<!DOCTYPE html>-->
+<html ng-app="Ekz">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Список автомобілів</title>
+</head>
+<body>
+<h2>Список автомобілів</h2>
+    <div ng-controller="Controller as listBuy"
+         
+        <h3>Купити</h3>
+        
+        <ul>
+            <li ng-repeat="item in listBuy.listBuy">
+                <div ng-if="item.isVisible===true">
+                {{item.quantity}} {{item.mark}}
+                <button ng-click="listBuy.sell($index);" id="sell">Видалити</button>
+               
+                <button ng-click="listBuy.hide($index);" id = hide>Приховати</button>
+                
+				 </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
